@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>buatt nayla, sayanggkuuu🥰</title>
+<meta name="description" content="Beberapa pesan kecil sebelum kamu tidur.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,600&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="stage">
+  <div class="stars" id="stars" aria-hidden="true"></div>
+
+  <svg class="moon" viewBox="0 0 120 120" role="img" aria-label="Bulan sabit">
+    <defs>
+      <mask id="cut">
+        <rect width="120" height="120" fill="#fff"/>
+        <circle cx="84" cy="46" r="42" fill="#000"/>
+      </mask>
+    </defs>
+    <circle cx="56" cy="62" r="44" fill="var(--moon)" mask="url(#cut)"/>
+  </svg>
+
+  <div class="content">
+    <h1>GOOD NIGHT, sayanggkuuu🥰</h1>
+    <p class="sub">sekarang waktunya istirahh yaa saayang🤍</p>
+
+    <p class="msg" id="msg" aria-live="polite"></p>
+    <button class="btn" id="next" type="button">Ketuk untuk pesan malam ini</button>
+    <div class="dots" id="dots" aria-hidden="true"></i><i></i><i></i></div>
+
+    <div class="reply" id="reply" hidden>
+      <label class="reply-label" for="ta">kalo emang mau baless bolee?</label>
+      <div class="chips" id="chips">
+        <button type="button" class="chip">good night jugaa banaa 💗</button>
+        <button type="button" class="chip">makasihh yaa buatt semua nya I LVOE YOU MORE🥰</button>
+        <button type="button" class="chip">Makasih ya,bana dahh perhatian</button>
+      </div>
+      <textarea id="ta" rows="3" maxlength="300" placeholder="Atau tulis balasanmu sendiri di sini"></textarea>
+      <a class="btn wa" id="wa" href="https://wa.me/" target="_blank" rel="noopener">Kirim lewat WhatsApp</a>
+    </div>
+  </div>
+
+  <svg class="hills" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 70C60 40 120 50 190 68C260 86 330 52 400 62V120H0Z" fill="var(--hill-1)"/>
+    <path d="M0 96C70 74 150 84 220 96C290 108 350 86 400 92V120H0Z" fill="var(--hill-2)"/>
+  </svg>
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>

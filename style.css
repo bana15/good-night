@@ -1,0 +1,58 @@
+:root{
+  --sky-top:#3A1768; --sky-mid:#9C3A8C; --sky-low:#F27BB0;
+  --text:#FFFFFF; --text-soft:#FFF1F7;
+  --moon:#FFE9C7;
+  --btn:#FF8FBB; --btn-ink:#2A0A3A; --btn-edge:#8E2B6A;
+  --hill-1:#4A1A5E; --hill-2:#33104A;
+  --display:"Fraunces","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --body:"Nunito",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sky-top);color:var(--text);font-family:var(--body);font-size:1.0625rem;line-height:1.6;overflow-x:hidden}
+h1,p{margin:0}
+:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+.stage{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.4rem 11rem;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 100%,rgba(255,205,228,.6),transparent 62%),linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 55%,var(--sky-low) 100%)}
+.stars{position:absolute;inset:0;pointer-events:none}
+.star{position:absolute;border-radius:50%;background:#fff;opacity:.85;animation:twinkle var(--d,3s) ease-in-out infinite alternate;animation-delay:var(--l,0s)}
+@keyframes twinkle{from{opacity:.25;transform:scale(.8)}to{opacity:1;transform:scale(1.15)}}
+
+.moon{position:relative;width:clamp(96px,26vw,140px);height:auto;margin-bottom:1.6rem;filter:drop-shadow(0 0 26px rgba(255,214,150,.5))}
+.content{position:relative;z-index:1;max-width:32rem}
+h1{font-family:var(--display);font-style:italic;font-weight:600;font-synthesis:none;font-size:clamp(2.4rem,9.5vw,4rem);line-height:1.08;text-wrap:balance}
+.sub{margin-top:.9rem;color:var(--text-soft);font-weight:600}
+
+.msg{margin:2rem auto 0;min-height:7.6rem;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-style:italic;font-weight:600;font-size:clamp(1.3rem,4.6vw,1.6rem);line-height:1.4;text-wrap:balance;opacity:0;transition:opacity .45s ease}
+.msg.show{opacity:1}
+
+.btn{display:inline-block;margin-top:1.4rem;padding:.9rem 1.8rem;font:inherit;font-weight:700;color:var(--btn-ink);background:var(--btn);border:0;border-radius:999px;box-shadow:0 4px 0 var(--btn-edge);cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--btn-edge)}
+.btn:active{transform:translateY(4px);box-shadow:0 0 0 var(--btn-edge)}
+.dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.2rem}
+.dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,241,247,.3);transition:background .3s ease}
+.dots i.on{background:var(--btn)}
+
+.hills{position:absolute;left:0;right:0;bottom:0;width:100%;height:clamp(110px,22vh,200px);display:block;pointer-events:none}
+
+
+[hidden]{display:none!important}
+.reply{margin-top:2.2rem}
+.reply-label{display:block;font-family:var(--display);font-style:italic;font-weight:600;font-size:1.35rem;margin-bottom:.9rem}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:.9rem}
+.chip{font:inherit;font-weight:600;font-size:.95rem;color:var(--text);background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:.4rem .95rem;cursor:pointer}
+.chip:hover{background:rgba(255,255,255,.26)}
+.reply textarea{display:block;width:100%;font:inherit;color:var(--text);background:rgba(58,23,104,.35);border:2px solid rgba(255,255,255,.55);border-radius:16px;padding:.8rem 1rem;resize:vertical;min-height:5.4rem}
+.reply textarea::placeholder{color:rgba(255,255,255,.75)}
+.btn.wa{background:#25D366;color:#06301B;box-shadow:0 4px 0 #128C4A;text-decoration:none}
+.btn.wa:hover{box-shadow:0 2px 0 #128C4A}
+.btn.wa:active{box-shadow:0 0 0 #128C4A}
+
+@media (prefers-reduced-motion:reduce){
+  .star{animation:none}
+  .msg,.btn,.dots i{transition:none}
+}
